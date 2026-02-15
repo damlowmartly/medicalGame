@@ -522,31 +522,300 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
+Here's the mobile-friendly CSS to add at the end of your style.css. This only affects mobile devices and keeps desktop exactly as it is:
+Add to the END of style.css
+css/* Dialogue Choice Buttons */
+.dialogue-choices {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.dialogue-choice-btn {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: white;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dialogue-choice-btn:hover {
+    transform: translateX(10px);
+    box-shadow: 0 6px 25px rgba(46, 204, 113, 0.4);
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+}
+
+.dialogue-choice-btn:active {
+    transform: translateX(5px);
+}
+
+/* ============================================ */
+/* MOBILE OPTIMIZATIONS ONLY - DESKTOP UNTOUCHED */
+/* ============================================ */
+
+@media (max-width: 768px) {
+    /* Make everything touch-friendly */
+    body {
+        overflow-x: hidden;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Header adjustments for mobile */
+    .header {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hospital-name h1 {
+        font-size: 1.3rem;
+    }
+
+    .pulse-icon {
+        font-size: 1.5rem;
+    }
+
+    .time-display {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Mobile Grid Layout - Stack Everything */
     .game-wrapper {
         grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
     }
-    
-    .patient-panel, .notes-panel {
+
+    /* Panel adjustments */
+    .patient-panel, .notes-panel, .main-panel {
         max-height: none;
+        padding: 1rem;
+    }
+
+    .panel-header h2 {
+        font-size: 1.1rem;
+    }
+
+    /* Vitals - Stack vertically on mobile */
+    .vital-item {
+        padding: 0.8rem;
+    }
+
+    .vital-icon {
+        font-size: 1.5rem;
+    }
+
+    .vital-value {
+        font-size: 1.1rem;
+    }
+
+    /* Symptoms list */
+    .symptoms-list li {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    /* Story section */
+    .story-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .story-content {
+        padding: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* Dialogue box */
+    .dialogue-box {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nurse-avatar {
+        font-size: 2.5rem;
+    }
+
+    .dialogue-content p {
+        font-size: 0.95rem;
+    }
+
+    /* Action buttons - Bigger touch targets */
+    .action-btn {
+        padding: 1.2rem 1rem;
+        font-size: 1.05rem;
+        min-height: 50px; /* Touch-friendly size */
+    }
+
+    .button-row {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .test-btn, .treatment-btn {
+        width: 100%;
+    }
+
+    /* Dialogue choice buttons - Extra large for touch */
+    .dialogue-choice-btn {
+        padding: 1.3rem 1.2rem;
+        font-size: 1.05rem;
+        min-height: 60px;
+    }
+
+    .dialogue-choice-btn:hover {
+        transform: none; /* Remove hover effects on mobile */
+    }
+
+    .dialogue-choice-btn:active {
+        transform: scale(0.98);
+        background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+    }
+
+    /* Test results */
+    .results-content {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .result-item {
+        padding: 0.8rem;
+    }
+
+    /* Outcome section */
+    .outcome-box {
+        padding: 2rem 1.5rem;
+    }
+
+    .outcome-icon {
+        font-size: 3.5rem;
+    }
+
+    #outcomeTitle {
+        font-size: 1.5rem;
+    }
+
+    .outcome-message {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* Notes panel */
+    .note-item {
+        padding: 0.6rem;
+        font-size: 0.85rem;
+    }
+
+    /* Start overlay */
+    .start-box {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+        max-width: 90%;
+    }
+
+    .start-box h1 {
+        font-size: 1.8rem;
+    }
+
+    .start-box h2 {
+        font-size: 1.3rem;
+    }
+
+    .start-box p {
+        font-size: 1rem;
+    }
+
+    .start-btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        width: 100%;
+    }
+
+    /* Action group headers */
+    .action-group h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Info rows */
+    .info-row {
+        font-size: 0.9rem;
+    }
+
+    /* Vitals section header */
+    .vitals-section h3,
+    .symptoms-section h3 {
+        font-size: 1rem;
     }
 }
 
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-    width: 10px;
+/* Extra small devices (phones in portrait) */
+@media (max-width: 480px) {
+    .hospital-name h1 {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+
+    .story-content,
+    .dialogue-content p {
+        font-size: 0.9rem;
+    }
+
+    .action-btn,
+    .dialogue-choice-btn {
+        font-size: 0.95rem;
+    }
+
+    .outcome-box {
+        padding: 1.5rem 1rem;
+    }
+
+    .outcome-icon {
+        font-size: 3rem;
+    }
+
+    #outcomeTitle {
+        font-size: 1.3rem;
+    }
 }
 
-::-webkit-scrollbar-track {
-    background: rgba(30, 39, 66, 0.5);
-    border-radius: 10px;
-}
+/* Touch-specific improvements for all mobile devices */
+@media (hover: none) and (pointer: coarse) {
+    /* Remove hover effects on touch devices */
+    .action-btn:hover,
+    .test-btn:hover,
+    .treatment-btn:hover,
+    .new-case-btn:hover,
+    .start-btn:hover {
+        transform: none;
+    }
 
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #00d9ff 0%, #1e90ff 100%);
-    border-radius: 10px;
-}
+    /* Add press effect instead */
+    .action-btn:active,
+    .test-btn:active,
+    .treatment-btn:active,
+    .new-case-btn:active,
+    .start-btn:active {
+        transform: scale(0.97);
+    }
 
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #1e90ff 0%, #00d9ff 100%);
+    /* Larger tap targets */
+    button, .action-btn, .dialogue-choice-btn {
+        min-height: 48px; /* iOS/Android minimum touch target */
+    }
+
+    /* Better scrolling on touch devices */
+    .patient-panel,
+    .notes-panel,
+    .main-panel {
+        -webkit-overflow-scrolling: touch;
+    }
 }
