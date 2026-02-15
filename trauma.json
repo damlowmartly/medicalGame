@@ -1,0 +1,62 @@
+{
+  "id": "motorcycle_trauma",
+  "patient": {
+    "name": "Jake Martinez",
+    "age": 27,
+    "gender": "Male",
+    "symptoms": ["🩸 Heavy bleeding from leg", "😖 Severe pain in chest and abdomen", "😵 Altered consciousness", "🫁 Difficulty breathing", "💢 Visible deformity in left leg"],
+    "vitals": {
+      "heartRate": 125,
+      "temperature": 36.8,
+      "oxygen": 90
+    }
+  },
+  "nurseDialogue": [
+    "🚨 Nurse Maria: TRAUMA ALERT! Motorcycle vs car collision! Patient incoming HOT!",
+    "😰 Nurse Maria: He's got a mangled leg with arterial bleeding! We've applied a tourniquet!",
+    "⚠️ Nurse Maria: Blood pressure is dropping - 85/60! He's tachycardic at 125! Possible internal bleeding!",
+    "🩺 Nurse Maria: Doctor, he's getting confused and combative! We need to move FAST!"
+  ],
+  "tests": {
+    "blood": {
+      "description": "🩸 Hemoglobin: 8.2 g/dL (severe anemia from blood loss). Lactate: 5.1 mmol/L (tissue hypoperfusion). Type O-positive blood. Coagulation studies show early DIC (disseminated intravascular coagulation).",
+      "revealed": false
+    },
+    "xray": {
+      "description": "📸 Chest X-ray reveals multiple left-sided rib fractures (ribs 4-7) with small pneumothorax. Possible pulmonary contusion. Pelvic X-ray shows stable pelvis. Left femur has comminuted fracture with significant displacement.",
+      "revealed": false
+    },
+    "ecg": {
+      "description": "📊 Sinus tachycardia at 125 bpm. No evidence of cardiac contusion or arrhythmia. Tachycardia is compensatory for hypovolemia and pain.",
+      "revealed": false
+    }
+  },
+  "treatments": [
+    {
+      "name": "🩸 Massive transfusion protocol + emergency surgery",
+      "correct": true,
+      "effect": "✅ LIFESAVING! You activate the trauma protocol. O-negative blood flows immediately. Ortho and vascular surgery teams rush in. They repair the femoral artery, stabilize the fracture, and stop the bleeding. After 6 hours of surgery and 8 units of blood, Jake is stable in ICU. Long recovery ahead, but he'll live! 🎉"
+    },
+    {
+      "name": "💉 IV fluids and pain management",
+      "correct": false,
+      "effect": "❌ INSUFFICIENT! Crystalloid fluids alone cannot replace lost blood or carry oxygen! Without blood products, Jake's hemoglobin drops further. His organs fail from hypoxia. Blood pressure crashes. He arrests within 20 minutes. He needed BLOOD, not just saline! 💀"
+    },
+    {
+      "name": "🔍 Complete all diagnostic tests first",
+      "correct": false,
+      "effect": "⏰ FATAL DELAY! While you order a full body CT scan and wait for results, Jake continues bleeding internally. His blood pressure drops to 60/40. By the time imaging is complete, he's in hemorrhagic shock and cardiac arrest. This was a 'LOAD AND GO' situation! 💔"
+    },
+    {
+      "name": "🦴 Stabilize fracture then reassess",
+      "correct": false,
+      "effect": "❌ WRONG PRIORITIES! You're focusing on the obvious injury while missing the life-threatening internal bleeding! While ortho works on the leg fracture, Jake's abdomen fills with blood from a splenic laceration. He crashes on the table. ABC protocol: bleeding kills faster than fractures! 😓"
+    }
+  ],
+  "storyFlow": [
+    "The trauma bay explodes with activity as paramedics burst through the doors. Jake Martinez, a 27-year-old construction worker, is strapped to a backboard, his motorcycle helmet cut away. Twenty minutes ago, he was riding home from work when a car ran a red light and T-boned him at 50 mph. Jake flew 30 feet through the air before hitting the pavement. His left leg is a mangled mess - the femur is visibly fractured with bone protruding through torn flesh. A tourniquet above his knee is soaked with blood. His leathers are shredded, and road rash covers his left side.",
+    "Nurse Maria is already cutting away his clothes. Jake is semi-conscious, groaning in pain, trying to sit up despite multiple restraints. His vitals are alarming: heart rate 125 bpm, blood pressure 85/60 and dropping, oxygen saturation 90%. His abdomen is rigid and distended - concerning for internal bleeding. His chest movements are asymmetric, and he's guarding his left side where you can see bruising and deformity. The paramedics report he was initially unconscious at the scene but woke up combative during transport. Classic signs of traumatic shock are setting in.",
+    "This is a time-critical trauma case. Jake is bleeding out - both externally from his leg and likely internally from chest or abdominal injuries. The ABCs of trauma are screaming at you: Airway is patent but he's confused. Breathing is compromised with possible pneumothorax. Circulation is failing with hypotension and tachycardia. You need to make split-second decisions. Do you rush him to emergency surgery? Start massive transfusion protocol? Order imaging? The trauma surgeon is scrubbing in, the blood bank is on standby, and radiology can have CT ready in 10 minutes. But does Jake have 10 minutes?",
+    "Your next move will determine if Jake lives or dies. Move fast with blood products and emergency surgery, and you might save him, though he'll face months of recovery and multiple surgeries. Waste time on extensive imaging or try to stabilize with fluids alone, and he'll exsanguinate before your eyes. Prioritize the wrong injury, and he'll die from what you missed. The OR is ready. His girlfriend just arrived, screaming and crying. The police are asking if he'll make it. The clock is ticking. What's your call, doctor?"
+  ]
+}
