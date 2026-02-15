@@ -1,1 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+    color: #e0e0e0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 100%;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #1e2742 0%, #2a3352 100%);
+    padding: 1.5rem 2rem;
+    border-bottom: 3px solid #00d9ff;
+    box-shadow: 0 4px 20px rgba(0, 217, 255, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hospital-name {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hospital-name h1 {
+    font-size: 1.8rem;
+    color: #00d9ff;
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+    letter-spacing: 2px;
+}
+
+.pulse-icon {
+    font-size: 2rem;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+}
+
+.time-display {
+    font-size: 1.2rem;
+    color: #ff4757;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 71, 87, 0.1);
+    border-radius: 8px;
+    border: 2px solid #ff4757;
+}
+
+/* Game Wrapper */
+.game-wrapper {
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    gap: 1.5rem;
+    padding: 2rem;
+    min-height: calc(100vh - 100px);
+}
+
+/* Panel Styling */
+.patient-panel, .notes-panel {
+    background: rgba(30, 39, 66, 0.9);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 2px solid #2a3352;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    overflow-y: auto;
+    max-height: calc(100vh - 140px);
+}
+
+.panel-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #00d9ff;
+}
+
+.panel-header h2 {
+    color: #00d9ff;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+/* Patient Info */
+.patient-info {
+    background: rgba(42, 51, 82, 0.6);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.label {
+    color: #7b8ab8;
+    font-weight: 600;
+}
+
+.value {
+    color: #00d9ff;
+    font-weight: bold;
+}
+
+/* Vitals */
+.vitals-section h3 {
+    color: #ff6b9d;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.vital-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.vital-item {
+    background: rgba(42, 51, 82, 0.6);
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-left: 4px solid;
+    transition: transform 0.2s;
+}
+
+.vital-item:hover {
+    transform: translateX(5px);
+}
+
+.heart-rate { border-color: #ff4757; }
+.temperature { border-color: #ffa502; }
+.oxygen { border-color: #1e90ff; }
+
+.vital-icon {
+    font-size: 2rem;
+}
+
+.vital-label {
+    color: #7b8ab8;
+    font-size: 0.85rem;
+}
+
+.vital-value {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* Symptoms */
+.symptoms-section {
+    margin-top: 1.5rem;
+}
+
+.symptoms-section h3 {
+    color: #ffa502;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.symptoms-list {
+    list-style: none;
+}
+
+.symptoms-list li {
+    background: rgba(42, 51, 82, 0.6);
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    border-left: 3px solid #ffa502;
+    font-size: 0.95rem;
+}
+
+/* Main Panel */
+.main-panel {
+    background: rgba(30, 39, 66, 0.9);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 2px solid #2a3352;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    overflow-y: auto;
+    max-height: calc(100vh - 140px);
+}
+
+/* Story Section */
+.story-section {
+    margin-bottom: 2rem;
+}
+
+.story-header h2 {
+    color: #00d9ff;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.story-content {
+    background: rgba(42, 51, 82, 0.6);
+    padding: 1.5rem;
+    border-radius: 8px;
+    line-height: 1.8;
+    color: #e0e0e0;
+    border-left: 4px solid #00d9ff;
+}
+
+.story-content p {
+    margin-bottom: 1rem;
+}
+
+.story-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Dialogue Box */
+.dialogue-section {
+    margin-bottom: 2rem;
+}
+
+.dialogue-box {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(42, 51, 82, 0.8) 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid #00d9ff;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    box-shadow: 0 4px 20px rgba(0, 217, 255, 0.2);
+}
+
+.nurse-avatar {
+    font-size: 3rem;
+    flex-shrink: 0;
+}
+
+.dialogue-content {
+    flex: 1;
+}
+
+.dialogue-content p {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+    color: #fff;
+}
+
+.dialogue-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Action Section */
+.action-section {
+    margin-bottom: 2rem;
+}
+
+.action-group {
+    margin-bottom: 1.5rem;
+}
+
+.action-group h3 {
+    color: #ff6b9d;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.button-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.button-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.action-btn {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+.test-btn {
+    background: linear-gradient(135deg, #1e90ff 0%, #00d9ff 100%);
+    color: white;
+    flex: 1;
+}
+
+.test-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0, 217, 255, 0.4);
+}
+
+.test-btn:disabled {
+    background: #555;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.treatment-btn {
+    background: linear-gradient(135deg, #ff6b9d 0%, #ff4757 100%);
+    color: white;
+}
+
+.treatment-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(255, 71, 87, 0.4);
+}
+
+.treatment-btn:disabled {
+    background: #555;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.new-case-btn {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: white;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.new-
