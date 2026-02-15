@@ -521,10 +521,7 @@ body {
     box-shadow: 0 6px 30px rgba(46, 204, 113, 0.5);
 }
 
-/* Responsive Design */
-Here's the mobile-friendly CSS to add at the end of your style.css. This only affects mobile devices and keeps desktop exactly as it is:
-Add to the END of style.css
-css/* Dialogue Choice Buttons */
+/* Dialogue Choice Buttons */
 .dialogue-choices {
     display: flex;
     flex-direction: column;
@@ -556,10 +553,42 @@ css/* Dialogue Choice Buttons */
     transform: translateX(5px);
 }
 
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(30, 39, 66, 0.5);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #00d9ff 0%, #1e90ff 100%);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #1e90ff 0%, #00d9ff 100%);
+}
+
 /* ============================================ */
-/* MOBILE OPTIMIZATIONS ONLY - DESKTOP UNTOUCHED */
+/* MOBILE & TOUCH OPTIMIZATIONS */
+/* Desktop view stays unchanged, only mobile affected */
 /* ============================================ */
 
+/* Tablet and below */
+@media (max-width: 1200px) {
+    .game-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .patient-panel, .notes-panel {
+        max-height: none;
+    }
+}
+
+/* Mobile devices */
 @media (max-width: 768px) {
     /* Make everything touch-friendly */
     body {
@@ -572,6 +601,11 @@ css/* Dialogue Choice Buttons */
         padding: 1rem;
         flex-direction: column;
         gap: 1rem;
+    }
+
+    .hospital-name {
+        flex-direction: row;
+        justify-content: center;
     }
 
     .hospital-name h1 {
@@ -607,6 +641,10 @@ css/* Dialogue Choice Buttons */
     /* Vitals - Stack vertically on mobile */
     .vital-item {
         padding: 0.8rem;
+    }
+
+    .vital-item:hover {
+        transform: none;
     }
 
     .vital-icon {
@@ -647,6 +685,7 @@ css/* Dialogue Choice Buttons */
 
     .dialogue-content p {
         font-size: 0.95rem;
+        text-align: center;
     }
 
     /* Action buttons - Bigger touch targets */
@@ -654,6 +693,7 @@ css/* Dialogue Choice Buttons */
         padding: 1.2rem 1rem;
         font-size: 1.05rem;
         min-height: 50px; /* Touch-friendly size */
+        text-align: center;
     }
 
     .button-row {
@@ -670,6 +710,7 @@ css/* Dialogue Choice Buttons */
         padding: 1.3rem 1.2rem;
         font-size: 1.05rem;
         min-height: 60px;
+        text-align: center;
     }
 
     .dialogue-choice-btn:hover {
@@ -760,8 +801,12 @@ css/* Dialogue Choice Buttons */
 /* Extra small devices (phones in portrait) */
 @media (max-width: 480px) {
     .hospital-name h1 {
-        font-size: 1.1rem;
+        font-size: 1rem;
         letter-spacing: 1px;
+    }
+
+    .pulse-icon {
+        font-size: 1.2rem;
     }
 
     .story-content,
@@ -772,6 +817,7 @@ css/* Dialogue Choice Buttons */
     .action-btn,
     .dialogue-choice-btn {
         font-size: 0.95rem;
+        padding: 1rem;
     }
 
     .outcome-box {
@@ -785,6 +831,18 @@ css/* Dialogue Choice Buttons */
     #outcomeTitle {
         font-size: 1.3rem;
     }
+
+    .start-box {
+        padding: 1.5rem 1rem;
+    }
+
+    .start-box h1 {
+        font-size: 1.5rem;
+    }
+
+    .start-box h2 {
+        font-size: 1.1rem;
+    }
 }
 
 /* Touch-specific improvements for all mobile devices */
@@ -796,6 +854,7 @@ css/* Dialogue Choice Buttons */
     .new-case-btn:hover,
     .start-btn:hover {
         transform: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
     /* Add press effect instead */
@@ -817,5 +876,10 @@ css/* Dialogue Choice Buttons */
     .notes-panel,
     .main-panel {
         -webkit-overflow-scrolling: touch;
+    }
+
+    /* Remove hover transform on vitals */
+    .vital-item:hover {
+        transform: none;
     }
 }
