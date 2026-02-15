@@ -1,0 +1,62 @@
+{
+  "id": "acute_appendicitis",
+  "patient": {
+    "name": "David Thompson",
+    "age": 19,
+    "gender": "Male",
+    "symptoms": ["😣 Severe right lower abdominal pain", "🤢 Nausea and vomiting", "🌡️ Low-grade fever", "😰 Pain worsens with movement", "🍽️ Loss of appetite"],
+    "vitals": {
+      "heartRate": 98,
+      "temperature": 38.4,
+      "oxygen": 98
+    }
+  },
+  "nurseDialogue": [
+    "🩺 Nurse Kelly: Doctor, we have a young college student with severe abdominal pain.",
+    "😟 Nurse Kelly: He says the pain started around his belly button yesterday and moved to his right side.",
+    "🤒 Nurse Kelly: He's been vomiting and has a fever. He refuses to eat anything.",
+    "⚠️ Nurse Kelly: When I pressed on his right lower abdomen, he nearly jumped off the table! Rebound tenderness is positive."
+  ],
+  "tests": {
+    "blood": {
+      "description": "🩸 WBC count: 16,500/μL (significantly elevated - indicates infection). Neutrophils: 85% (left shift present). CRP: 45 mg/L (elevated inflammation marker). Normal kidney and liver function.",
+      "revealed": false
+    },
+    "xray": {
+      "description": "📸 Abdominal X-ray shows non-specific bowel gas pattern. No free air under diaphragm (no perforation yet). Small amount of fluid in right lower quadrant. Ultrasound would be more diagnostic.",
+      "revealed": false
+    },
+    "ecg": {
+      "description": "📊 Normal sinus rhythm at 98 bpm. No cardiac abnormalities detected. This is appropriate tachycardia due to pain and fever, not cardiac disease.",
+      "revealed": false
+    }
+  },
+  "treatments": [
+    {
+      "name": "🔪 Emergency appendectomy (surgical removal)",
+      "correct": true,
+      "effect": "✅ PERFECT CHOICE! Surgery successfully removes the inflamed appendix before rupture. Pathology confirms acute appendicitis. Patient recovers fully within 2 weeks! 🎉"
+    },
+    {
+      "name": "💊 IV antibiotics + observation",
+      "correct": false,
+      "effect": "⚠️ RISKY GAMBLE! Antibiotics may temporarily help, but the appendix is inflamed and at high risk of rupture. 8 hours later, patient develops peritonitis - the appendix has burst! Now requires emergency surgery with longer recovery and complications! 😰"
+    },
+    {
+      "name": "💉 Pain medication and send home",
+      "correct": false,
+      "effect": "❌ CATASTROPHIC ERROR! You've masked the symptoms without treating the cause. Patient goes home, appendix ruptures overnight, develops sepsis. Returns in critical condition requiring ICU admission. Potential lawsuit for misdiagnosis! 💀"
+    },
+    {
+      "name": "🧪 More diagnostic tests first",
+      "correct": false,
+      "effect": "⏰ TIME WASTED! While you order more tests, the appendix ruptures. Patient develops acute peritonitis. What should have been a simple appendectomy becomes a major surgery with ICU stay. Time is tissue, doctor! 😓"
+    }
+  ],
+  "storyFlow": [
+    "It's Friday night at 9:15 PM when David Thompson stumbles into the ER, hunched over and clutching his abdomen. The 19-year-old college freshman was supposed to be at a frat party tonight, but instead he's here, pale and sweating. His roommate drove him after David spent the last hour vomiting and couldn't stand up straight. 'It started yesterday as just a weird stomach ache,' David groans, 'but now it feels like someone's stabbing me on the right side.'",
+    "Nurse Kelly gets him onto a gurney and begins her assessment. David's temperature reads 38.4°C - definitely running a fever. His heart rate is elevated at 98 bpm, likely from pain and stress. When she gently presses on his right lower abdomen at McBurney's point, David nearly levitates off the table. The rebound tenderness is unmistakable. He's guarding his abdomen, taking shallow breaths to avoid movement. Every bump in the road on the way here was agony. Classic signs are lining up: the pain migration from periumbilical to right lower quadrant, the fever, the vomiting, the positive rebound.",
+    "This presentation screams appendicitis, but you need to be thorough. You can order blood work to check for elevated white blood cells and inflammatory markers. An X-ray might show some clues, though it's not the most sensitive test for appendicitis. The ECG will rule out any cardiac issues causing referred pain. The question is: how much time do you spend on diagnostics versus moving to treatment? An inflamed appendix is a ticking time bomb. Leave it too long, and it ruptures, spilling bacteria throughout the abdominal cavity and turning a routine surgery into a life-threatening emergency.",
+    "Your decision will chart David's course. Choose surgery now, and he'll have a straightforward appendectomy with a quick recovery - back to classes in two weeks. Choose to observe with antibiotics, and you're gambling that the appendix won't rupture while you wait. Send him home with pain meds, and you're committing malpractice - he'll be back in worse condition. The surgical team is available and ready. His parents are on their way. What's the call, doctor? Do you operate, observe, or order more tests?"
+  ]
+}
