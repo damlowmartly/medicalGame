@@ -1,1 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ER Simulator - Medical Emergency Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="hospital-name">
+                <span class="pulse-icon">💓</span>
+                <h1>EMERGENCY ROOM SIMULATOR</h1>
+                <span class="pulse-icon">💓</span>
+            </div>
+            <div class="time-display">
+                <span id="gameTime">⏰ 00:00</span>
+            </div>
+        </header>
 
+        <!-- Main Game Area -->
+        <div class="game-wrapper">
+            <!-- Left Panel: Patient Info -->
+            <aside class="patient-panel">
+                <div class="panel-header">
+                    <h2>📋 PATIENT FILE</h2>
+                </div>
+                
+                <div class="patient-info" id="patientInfo">
+                    <div class="info-row">
+                        <span class="label">Name:</span>
+                        <span class="value" id="patientName">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Age:</span>
+                        <span class="value" id="patientAge">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Gender:</span>
+                        <span class="value" id="patientGender">-</span>
+                    </div>
+                </div>
+
+                <div class="vitals-section">
+                    <h3>🫀 VITAL SIGNS</h3>
+                    <div class="vital-box">
+                        <div class="vital-item heart-rate">
+                            <span class="vital-icon">❤️</span>
+                            <div>
+                                <div class="vital-label">Heart Rate</div>
+                                <div class="vital-value" id="heartRate">-- bpm</div>
+                            </div>
+                        </div>
+                        <div class="vital-item temperature">
+                            <span class="vital-icon">🌡️</span>
+                            <div>
+                                <div class="vital-label">Temperature</div>
+                                <div class="vital-value" id="temperature">-- °C</div>
+                            </div>
+                        </div>
+                        <div class="vital-item oxygen">
+                            <span class="vital-icon">💨</span>
+                            <div>
+                                <div class="vital-label">O₂ Saturation</div>
+                                <div class="vital-value" id="oxygen">-- %</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="symptoms-section">
+                    <h3>🩺 SYMPTOMS</h3>
+                    <ul class="symptoms-list" id="symptomsList">
+                        <li>Loading patient...</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Center Panel: Story and Dialogue -->
+            <main class="main-panel">
+                <!-- Story Section -->
+                <section class="story-section">
+                    <div class="story-header">
+                        <h2>📖 CASE REPORT</h2>
+                    </div>
+                    <div class="story-content" id="storyContent">
+                        <p>Waiting for patient arrival...</p>
+                    </div>
+                </section>
+
+                <!-- Nurse Dialogue -->
+                <section class="dialogue-section">
+                    <div class="dialogue-box" id="dialogueBox">
+                        <div class="nurse-avatar">👩‍⚕️</div>
+                        <div class="dialogue-content" id="dialogueContent">
+                            <p>Ready for the next patient, Doctor.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Action Buttons -->
+                <section class="action-section">
+                    <div class="action-group">
+                        <h3>🔬 DIAGNOSTIC TESTS</h3>
+                        <div class="button-row">
+                            <button class="action-btn test-btn" id="bloodTest" onclick="orderTest('blood')">
+                                🩸 Blood Test
+                            </button>
+                            <button class="action-btn test-btn" id="xrayTest" onclick="orderTest('xray')">
+                                📸 X-Ray
+                            </button>
+                            <button class="action-btn test-btn" id="ecgTest" onclick="orderTest('ecg')">
+                                📊 ECG
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="action-group">
+                        <h3>💊 TREATMENT OPTIONS</h3>
+                        <div id="treatmentButtons" class="button-column">
+                            <!-- Treatment buttons will be generated here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Test Results -->
+                <section class="results-section" id="resultsSection" style="display: none;">
+                    <div class="results-header">
+                        <h3>📋 TEST RESULTS</h3>
+                    </div>
+                    <div class="results-content" id="resultsContent">
+                        <!-- Test results will appear here -->
+                    </div>
+                </section>
+
+                <!-- Outcome Section -->
+                <section class="outcome-section" id="outcomeSection" style="display: none;">
+                    <div class="outcome-box">
+                        <div class="outcome-icon" id="outcomeIcon">🎉</div>
+                        <h2 id="outcomeTitle">CASE COMPLETE</h2>
+                        <div class="outcome-message" id="outcomeMessage"></div>
+                        <button class="action-btn new-case-btn" onclick="loadNewCase()">
+                            🔄 New Patient
+                        </button>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Right Panel: Notes -->
+            <aside class="notes-panel">
+                <div class="panel-header">
+                    <h2>📝 MEDICAL NOTES</h2>
+                </div>
+                <div class="notes-content" id="notesContent">
+                    <div class="note-item">
+                        <span class="note-time">00:00</span>
+                        <span class="note-text">Patient admitted to ER</span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Start Screen Overlay -->
+        <div class="start-overlay" id="startOverlay">
+            <div class="start-box">
+                <h1>🏥 EMERGENCY ROOM</h1>
+                <h2>MEDICAL SIMULATOR</h2>
+                <p>You are the attending physician in a busy ER.</p>
+                <p>Make critical decisions to save lives.</p>
+                <button class="start-btn" onclick="startGame()">
+                    ▶️ START SHIFT
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
