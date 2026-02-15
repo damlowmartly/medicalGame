@@ -1,0 +1,62 @@
+{
+  "id": "anaphylactic_shock",
+  "patient": {
+    "name": "Emily Rodriguez",
+    "age": 28,
+    "gender": "Female",
+    "symptoms": ["😰 Severe difficulty breathing", "🔴 Full-body hives and swelling", "🤢 Nausea and vomiting", "😵‍💫 Dizziness and confusion", "👅 Swollen tongue and lips"],
+    "vitals": {
+      "heartRate": 132,
+      "temperature": 37.1,
+      "oxygen": 84
+    }
+  },
+  "nurseDialogue": [
+    "🚨 Nurse James: CODE BLUE! Allergic reaction patient incoming!",
+    "😱 Nurse James: She ate at a Thai restaurant 15 minutes ago! Her throat is closing up!",
+    "⏰ Nurse James: Doctor, her oxygen is dropping fast - 84% and falling! She's in anaphylaxis!",
+    "💉 Nurse James: We need to act NOW! She can't breathe!"
+  ],
+  "tests": {
+    "blood": {
+      "description": "🩸 Elevated tryptase levels: 25 ng/mL (severe allergic reaction confirmed). Histamine: markedly elevated. IgE antibodies: significantly raised. Eosinophils: 8% (elevated).",
+      "revealed": false
+    },
+    "xray": {
+      "description": "📸 Chest X-ray shows bilateral lung hyperinflation consistent with bronchospasm. No foreign body obstruction. Upper airway shows soft tissue swelling (angioedema).",
+      "revealed": false
+    },
+    "ecg": {
+      "description": "📊 Sinus tachycardia at 132 bpm. ST-segment changes suggesting myocardial hypoxia due to poor oxygenation. No signs of arrhythmia yet, but patient is at risk.",
+      "revealed": false
+    }
+  },
+  "treatments": [
+    {
+      "name": "💉 Epinephrine (0.3mg IM) STAT",
+      "correct": true,
+      "effect": "✅ LIFESAVING! Within 60 seconds, airways begin opening. Wheezing decreases dramatically. Blood pressure stabilizes. Oxygen saturation climbs to 92%! Patient gasps in relief. 🙏"
+    },
+    {
+      "name": "💊 Antihistamines (Benadryl IV)",
+      "correct": true,
+      "effect": "✅ GOOD ADJUNCT! Hives begin to fade. Reduces histamine response. Helps prevent biphasic reaction. Works well WITH epinephrine but cannot replace it. 👍"
+    },
+    {
+      "name": "💨 Albuterol nebulizer",
+      "correct": false,
+      "effect": "⚠️ INSUFFICIENT! While it helps bronchospasm slightly, it does NOTHING for the angioedema or systemic reaction. Patient's throat continues swelling! Oxygen drops to 78%! This alone will NOT save her! ⛔"
+    },
+    {
+      "name": "⏸️ Watch and wait with oxygen",
+      "correct": false,
+      "effect": "❌ FATAL MISTAKE! Anaphylaxis is a MEDICAL EMERGENCY requiring immediate epinephrine! Within 3 minutes, her airway completely closes. Cardiac arrest follows. She needed epi IMMEDIATELY! 💀"
+    }
+  ],
+  "storyFlow": [
+    "The automatic doors burst open as two frantic friends rush in supporting Emily Rodriguez, a 28-year-old graphic designer who can barely stand. Her face is swollen almost beyond recognition, covered in angry red welts. She's clutching her throat, making terrifying wheezing sounds as she struggles for each breath. Her friends are shouting over each other: 'She ate pad thai!' 'We didn't know there were peanuts!' 'She said her EpiPen was expired!' The restaurant is only two blocks away - this happened FAST.",
+    "You sprint over as Nurse James already has Emily on a gurney. Her lips and tongue are grotesquely swollen, turning bluish. Hives cover every visible inch of her skin. She's trying to speak but can only produce strangled gasps. The pulse oximeter screams an alarm - 84% and dropping. Her heart is racing at 132 bpm, trying desperately to compensate for the lack of oxygen. Her eyes are wide with panic; she knows she's dying. This is textbook anaphylactic shock - a life-threatening emergency where minutes matter.",
+    "Your mind races through the protocol. Anaphylaxis is a medical emergency requiring immediate intervention. You could order tests to confirm the diagnosis and assess organ damage, but is there even time? Her airway is swelling shut right before your eyes. You need to choose treatment NOW. Epinephrine is the gold standard, but timing and adjunct therapies matter. Some treatments might help symptoms without addressing the core problem. Others might seem reasonable but could waste critical seconds.",
+    "This is the moment where your knowledge and decisiveness will determine if Emily walks out of here or gets wheeled to the morgue. Choose epinephrine immediately with proper adjuncts, and you'll watch her airways open, her color return, and her grateful tears as she realizes she'll live. But hesitate, choose the wrong treatment, or underestimate the severity, and her airway will close completely within minutes, leading to cardiac arrest. Her friends are screaming for you to do something. What's your move, doctor?"
+  ]
+}
