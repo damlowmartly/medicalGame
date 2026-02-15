@@ -1,0 +1,62 @@
+{
+  "id": "severe_hypothermia",
+  "patient": {
+    "name": "Marcus Chen",
+    "age": 34,
+    "gender": "Male",
+    "symptoms": ["🥶 Severe shivering", "😵 Confusion and slurred speech", "💙 Bluish skin (cyanosis)", "🫀 Irregular heartbeat", "🥴 Loss of coordination"],
+    "vitals": {
+      "heartRate": 45,
+      "temperature": 30.2,
+      "oxygen": 88
+    }
+  },
+  "nurseDialogue": [
+    "🩺 Nurse Sarah: Doctor! We have an emergency! Hiker found unconscious on Mt. Rainier!",
+    "😰 Nurse Sarah: His core temperature is dangerously low - 30.2°C! He's barely responsive!",
+    "🚨 Nurse Sarah: He was exposed to freezing conditions for over 6 hours before rescue found him!",
+    "⚠️ Nurse Sarah: His heart rhythm is unstable, doctor. What should we do?"
+  ],
+  "tests": {
+    "blood": {
+      "description": "🩸 Blood glucose: 55 mg/dL (low). Potassium: 5.8 mEq/L (elevated). Lactate: 4.2 mmol/L (elevated, indicating tissue hypoxia). Blood pH: 7.28 (metabolic acidosis).",
+      "revealed": false
+    },
+    "xray": {
+      "description": "📸 Chest X-ray shows bilateral pulmonary edema (fluid in lungs). No signs of aspiration pneumonia. Heart appears enlarged, consistent with cold-induced cardiac stress.",
+      "revealed": false
+    },
+    "ecg": {
+      "description": "📊 ECG reveals bradycardia (45 bpm) with Osborn J waves - pathognomonic sign of hypothermia. Atrial fibrillation present. Risk of ventricular fibrillation is extremely high.",
+      "revealed": false
+    }
+  },
+  "treatments": [
+    {
+      "name": "🔥 Active external rewarming (heating blankets)",
+      "correct": false,
+      "effect": "❌ DANGEROUS! Rapid external warming causes peripheral vasodilation, leading to 'afterdrop' - cold blood rushes to core, causing cardiac arrest! Patient's heart stops! 💀"
+    },
+    {
+      "name": "🌡️ Active core rewarming (warm IV fluids + heated oxygen)",
+      "correct": true,
+      "effect": "✅ EXCELLENT! Core temperature rises gradually. Heart rate improves to 58 bpm. Patient regains consciousness slowly. Oxygen saturation increases to 94%. 🎉"
+    },
+    {
+      "name": "💊 IV dextrose + thiamine",
+      "correct": true,
+      "effect": "✅ GOOD SUPPORT! Corrects hypoglycemia and prevents Wernicke's encephalopathy. Patient's mental status improves. Complements rewarming perfectly! 👍"
+    },
+    {
+      "name": "⚡ Aggressive CPR and defibrillation",
+      "correct": false,
+      "effect": "❌ BAD TIMING! The hypothermic heart is extremely irritable. Aggressive handling triggers ventricular fibrillation! Patient deteriorates rapidly! 💔"
+    }
+  ],
+  "storyFlow": [
+    "It's 2:47 AM when the ambulance screams into the emergency bay. Search and rescue teams recovered a hiker from Mt. Rainier after his distress beacon activated. The paramedics rush in with a stretcher carrying Marcus Chen, a 34-year-old software engineer who went for what was supposed to be a day hike. An unexpected blizzard trapped him in sub-zero temperatures for over six hours. His clothes are frozen stiff, and his skin has an alarming bluish tint.",
+    "As you approach, you notice Marcus is conscious but severely confused, mumbling incoherently about 'warm beach sand' - a dangerous sign of severe hypothermia-induced delirium. His entire body trembles violently with uncontrolled shivering. Nurse Sarah quickly rattles off his vitals: heart rate at a dangerously slow 45 bpm, core temperature of 30.2°C, and oxygen saturation at 88%. His extremities feel ice-cold to the touch, and his movements are clumsy and uncoordinated. This is a critical hypothermia case - one wrong move could trigger fatal cardiac arrhythmias.",
+    "You need to act fast but carefully. Hypothermia patients are extremely fragile - their hearts are like ticking time bombs, ready to slip into ventricular fibrillation at the slightest provocation. You can order diagnostic tests to understand the full scope of internal damage: blood work to check for metabolic complications, a chest X-ray to assess lung status, and an ECG to evaluate cardiac function. But time is critical. How will you rewarm him? External heating seems fast, but could it be dangerous? Active core rewarming is slower but potentially safer. What about metabolic support?",
+    "Your treatment choices will determine Marcus's fate. Choose the correct combination of core rewarming and metabolic support, and Marcus will gradually stabilize, his temperature will rise safely, and he'll eventually wake up thanking you for saving his life - though he'll lose a few toes to frostbite. But make the wrong choice - rewarm him too quickly or handle him too aggressively - and his irritable heart will give out, sending him into cardiac arrest on your table. The clock is ticking, doctor. What's your call?"
+  ]
+}
